@@ -5,11 +5,13 @@ from sqlalchemy.sql import func
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
+from flask_cors import CORS
 
 
 application = Flask(__name__)
 application.config['SQLALCHEMY_DATABASE_URI'] = Config.DATABASE_URL
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+CORS(application)
 
 # ORM wrapper to easen DB management
 db = SQLAlchemy(application)
