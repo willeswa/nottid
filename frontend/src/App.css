@@ -2,9 +2,83 @@
   text-align: center;
 }
 
+.Container {
+  padding:  2%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.Logout {
+  text-align: right;
+  width: 80%;
+  margin: o auto;
+}
+
+.NiceItem {
+  display: block;
+  border: #282c34 1px solid;
+  margin: 5px;
+  padding: 2px 15px;
+  border-radius: 5px;
+  list-style: none;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.Block {
+  padding: 16px;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.Heading {
+  font-size: large;
+  font-weight: bold;
+}
+
+.InlineBlock {
+  padding: 10px 15px;
+  margin: 5px auto;
+  width: 100%;
+  display: block;
+}
+
+.error {
+  color: red;
+  size: 16px;
+  margin: auto;
+}
+
+.Subtitle {
+  font-size: small;
+  text-align: right;  
+}
+
+.TextArea {
+  font-size: large;
+ 
+}
+
+.AlignRight {
+  align-self: flex-end;
+}
+
+.Row-Container {
+  display: flex;
+}
+
+.Button {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.Flex-Item-Half {
+  flex: 50%;
+  font-size: medium;
+  display: inline-block;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -23,6 +97,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
 
 .App-link {
   color: #61dafb;

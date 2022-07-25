@@ -1,25 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import EntryList from './EntryList';
+import RegistrationScreen from './RegistrationScreen';
+import React, { useState, useEffect } from 'react';
+import LoginScreen from './LoginScreen';
 
 function App() {
+  const [apiKey, setApiKey] = useState(null);
+
+  useEffect(() => {
+    function checkIfLoggedIn() {
+      const key = localStorage.getItem("apiKey");
+      const expired = localStorage.getItem("expired");
+      if (key) {
+        setApiKey(key);
+      } else {
+        setApiKey(null);
+      }
+
+    }
+
+    checkIfLoggedIn()
+
+    window.addEventListener("storage", checkIfLoggedIn);
+
+    return () => {
+      window.removeEventListener("storage", checkIfLoggedIn);
+    }
+  }, [apiKey]);
+
+  if (apiKey != null) {
+    return <EntryList />
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='Row-Container'>
+      <RegistrationScreen />
+      <LoginScreen />
     </div>
-  );
+  )
+
 }
 
 export default App;
