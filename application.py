@@ -13,7 +13,7 @@ daemon = Thread(target=start_schedule, daemon=True, name="email_entries")
 daemon.start()
 
 # Prep the database
-# db.drop_all()
+db.drop_all()
 db.create_all()
 
 # Get all entries endpoint
