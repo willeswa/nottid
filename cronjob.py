@@ -55,7 +55,7 @@ def send_email(user, entry):
     server.quit()
 
 
-schedule.every().day.at("18:02").do(email_out_entries)
+schedule.every().day.at("12:00").do(email_out_entries)
 
 def start_schedule():
     starttime = time.time()
